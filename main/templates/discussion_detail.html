@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="community">
+    <h1>{{ discussion.title }}</h1>
+    <p class="discussion-meta">By <strong>@{{ discussion.user.username }}</strong> | {{ discussion.created_at }}</p>
+    <p class="discussion-content">{{ discussion.content }}</p>
+
+    <h2>Replies</h2>
+    <div class="replies">
+        {% for reply in replies %}
+            <div class="reply">
+                <p class="reply-meta"><strong>@{{ reply.user.username }}</strong> - {{ reply.created_at }}</p>
+                <p class="reply-content">{{ reply.content }}</p>
+            </div>
+        {% empty %}
+            <p>No replies yet. Be the first to respond!</p>
+        {% endfor %}
+    </div>
+
+    <!-- Reply Form -->
+    <form method="post" class="reply-form">
+        {% csrf_token %}
+        <label for="content">Reply:</label>
+        <textarea name="content" id="content" required placeholder="Write your reply..."></textarea>
+
+        <button type="submit">Reply</button>
+    </form>
+</section>
+{% endblock %}

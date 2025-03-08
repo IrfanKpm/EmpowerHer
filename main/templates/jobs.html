@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="jobs">
+    <h1>Job Listings</h1>
+    <p class="subtitle">Find opportunities that empower women.</p>
+
+    <!-- Search and Filters Section -->
+    <div class="search-filters">
+        <input type="text" placeholder="Search jobs..." class="search-bar">
+        <select class="filter-select">
+            <option value="">All Categories</option>
+            <option value="tech">Tech</option>
+            <option value="business">Business</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="education">Education</option>
+            <option value="creative">Creative Arts</option>
+        </select>
+    </div>
+
+    <!-- Job Listings Section -->
+    <div class="job-listings">
+        <div class="job-card">
+            <h3>Software Engineer</h3>
+            <p class="company">TechCorp</p>
+            <p class="location">Remote</p>
+            <p class="description">Join our team to build innovative software solutions.</p>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Marketing Manager</h3>
+            <p class="company">Global Marketing Inc.</p>
+            <p class="location">New York, USA</p>
+            <p class="description">Lead our marketing team and drive brand growth.</p>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Nurse Practitioner</h3>
+            <p class="company">HealthCare Solutions</p>
+            <p class="location">Los Angeles, USA</p>
+            <p class="description">Provide compassionate care to patients in need.</p>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Graphic Designer</h3>
+            <p class="company">Creative Studio</p>
+            <p class="location">London, UK</p>
+            <p class="description">Create stunning visuals for our clients.</p>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+        <div class="job-card">
+            <h3>Teacher</h3>
+            <p class="company">Bright Future School</p>
+            <p class="location">Sydney, Australia</p>
+            <p class="description">Inspire young minds with your teaching skills.</p>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

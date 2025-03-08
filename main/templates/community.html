@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="community">
+    <h1>Community Discussions</h1>
+    <p>Connect, discuss, and seek mentorship.</p>
+
+    <!-- New Discussion Form -->
+    <form method="post" class="new-discussion-form">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required placeholder="Enter discussion title">
+
+        <label for="content">Content:</label>
+        <textarea name="content" id="content" required placeholder="Write your thoughts..."></textarea>
+
+        <button type="submit">Start Discussion</button>
+    </form>
+
+    <!-- List of Discussions -->
+    <div class="discussion-list">
+        {% for discussion in discussions %}
+            <div class="discussion">
+                <a href="{% url 'discussion_detail' discussion.id %}" class="discussion-title">
+                    {{ discussion.title }}
+                </a>
+                <p class="discussion-meta">By {{ discussion.user.username }} | {{ discussion.created_at }}</p>
+            </div>
+        {% empty %}
+            <p>No discussions yet. Be the first to start one!</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
